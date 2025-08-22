@@ -7,8 +7,8 @@ import java.util.Arrays;
 import java.util.Optional;
 
 public enum KDStatus {
-    NEW(1,"揽收"),
     APPROVE(0,"在途"),
+    NEW(1,"揽收"),
     DRIVING(3,"签收");
 
     @Getter@Setter
