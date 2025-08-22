@@ -32,6 +32,7 @@ public class KD100Controller {
 
         QueryTrackReq queryTrackReq = new QueryTrackReq();
         QueryTrackParam queryTrackParam = new QueryTrackParam();
+//        queryTrackParam.setCom(CompanyConstant.YT);
         queryTrackParam.setCom(com);
         queryTrackParam.setNum(number);
         String param = new Gson().toJson(queryTrackParam);
