@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.beiyou.dao.StudentDao">
+    <!--新增数据-->
+    <insert id="insert">
+        insert into student(name,age,sex,address,email,phone)
+        values (#{name},#{age},#{sex},#{address},#{email},#{phone})
+    </insert>
+
+    <!-- 批量新增数据 -->
+    <insert id="insertBatch" >
+        insert into student(name,age,sex,address,email,phone)
+        values
+        <foreach collection="students" item="entity" separator=",">
+            (#{entity.name},#{entity.age},#{entity.sex},#{entity.address},#{entity.email},#{entity.phone})
+        </foreach>
+    </insert>
+
+    <select id="selectCount"  resultType="java.lang.Integer">
+        select count(*) from student
+    </select>
+
+    <select id="getDataByPage" resultType="com.beiyou.entity.Student">
+        SELECT * FROM student LIMIT #{pageSize} OFFSET #{pageNum}
+    </select>
+</mapper>
+

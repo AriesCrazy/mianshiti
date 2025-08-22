@@ -1,0 +1,4 @@
+org.springframework.context.ApplicationListener = \
+  com.beiyou.listener.MyApplicationStartingEventListener,\
+  com.beiyou.listener.Cat1Listener,\
+  com.beiyou.listener.Cat2Listener
